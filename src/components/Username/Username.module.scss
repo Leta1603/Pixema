@@ -1,0 +1,61 @@
+@import "src/styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  color: $white;
+  gap: 20px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background-color: $primary;
+  color: $white;
+  font-family: "Exo 2";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.username {
+  font-family: "Exo 2";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $white;
+}
+
+.list {
+  background-color: $dark;
+  border-radius: 10px;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  width: 100%;
+}
+
+.item {
+  color: $white;
+  font-family: "Exo 2";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 15px 20px;
+  transition: 0.2s;
+  &:not(:last-child) {
+    border-bottom: 1px solid $graphite;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $primary;
+  }
+}

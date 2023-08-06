@@ -1,0 +1,35 @@
+@import "src/styles/colors";
+@mixin button {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 16px 69px;
+  color: $white;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: 1s;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.primary {
+  @include button;
+  background-color: $primary;
+  &:hover {
+    background-color: $primary-secondary;
+  }
+}
+
+.secondary {
+  @include button;
+  background-color: $graphite;
+}
+
+.disable {
+  background-color: $secondary;
+  &:hover {
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,20 @@
+@import "src/styles/colors";
+.tab {
+  padding: 14px 88px;
+  color: $secondary;
+  background-color: $dark;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  transition: 1s;
+  &:hover {
+    cursor: pointer;
+    color: $white;
+  }
+}
+
+.active {
+  color: $white;
+  background-color: $graphite;
+}

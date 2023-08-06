@@ -1,0 +1,43 @@
+@import "src/styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &:hover,
+  &:active {
+    cursor: pointer;
+    .title {
+      color: $primary;
+    }
+    svg > path {
+      transition: 0.2s;
+      fill: $primary;
+    }
+  }
+}
+
+.label {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
+
+.title {
+  color: $white;
+  font-family: "Exo 2";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  transition: 0.2s;
+}
+
+.disabled {
+  pointer-events: none;
+  .title {
+    color: $graphite;
+  }
+  svg > path {
+    fill: $graphite;
+  }
+}

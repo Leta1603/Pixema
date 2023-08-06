@@ -1,0 +1,89 @@
+@import "src/styles/colors";
+
+.label {
+  display: block;
+  color: $white;
+  font-family: "Exo 2";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.custom-select {
+  &__control {
+    background-color: $graphite !important;
+    border: 2px solid transparent !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    transition: 0.2s;
+    height: 56px;
+  }
+  &__control:active,
+  &__control:focus {
+    border: 2px solid $primary !important;
+  }
+  &__control--menu-is-open {
+    border-color: $primary !important;
+  }
+  &__control:hover {
+    cursor: pointer !important;
+  }
+  &__value-container {
+    padding: 0 20px !important;
+  }
+  &__input-container {
+    font-family: "Exo 2" !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    color: $white !important;
+  }
+  &__menu {
+    background-color: $graphite !important;
+    border: 2px solid transparent !important;
+    border-radius: 10px !important;
+    color: $white !important;
+  }
+  &__indicator-separator {
+    display: none !important;
+  }
+  &__option {
+    background-color: transparent !important;
+    transition: 0.2s !important;
+  }
+  &__option:hover {
+    background-color: transparent !important;
+    color: $primary !important;
+    cursor: pointer !important;
+  }
+  &__multi-value {
+    background-color: $dark !important;
+    color: $light !important;
+    border: 2px solid transparent !important;
+    border-radius: 6px !important;
+    &__label {
+      color: $white !important;
+    }
+  }
+  &__dropdown-indicator {
+    padding: 0 20px 0 8px !important;
+  }
+  &__dropdown-indicator:hover {
+    color: $light !important;
+  }
+  &__multi-value__remove:hover {
+    background-color: transparent !important;
+    color: $primary !important;
+  }
+
+  &__control--is-disabled {
+    background-color: $secondary !important;
+    .custom-select__placeholder {
+      color: $light !important;
+    }
+  }
+  &__single-value {
+    color: $white !important;
+  }
+}

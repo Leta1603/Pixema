@@ -1,0 +1,38 @@
+@import "src/styles/colors";
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $graphite;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  &:hover,
+  &:focus {
+    border: 2px solid $primary;
+  }
+}
+
+.searchInput {
+  margin-top: 0;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px 20px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.disabled {
+  background-color: transparent;
+  pointer-events: none;
+  .searchInput {
+    background-color: $secondary;
+    &::placeholder {
+      color: $light;
+    }
+  }
+}
