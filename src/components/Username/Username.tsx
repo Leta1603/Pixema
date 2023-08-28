@@ -1,7 +1,14 @@
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useState } from "react";
 
 import styles from "./Username.module.scss";
-import { ArrowDownIcon, ArrowRightIcon, UserIcon } from "../../assets/icons";
+import { ArrowDownIcon, ArrowRightIcon, UserIcon } from "src/assets/icons";
+import { useNavigate } from "react-router-dom";
+import { RoutesList } from "src/components/Router";
+import { ACTIVE_USER_DATA, USERS_DATA } from "src/utils/constants";
+import { UserListType } from "src/redux/@type";
+import { useThemeContext } from "src/context/Theme";
+import classNames from "classnames";
+import { Theme } from "src/@types";
 
 type UsernameProps = {
   username: string;
@@ -9,14 +16,43 @@ type UsernameProps = {
 
 const Username: FC<UsernameProps> = ({ username }) => {
   const [isOpened, setOpened] = useState(false);
+  const navigate = useNavigate();
+
+  const { themeValue } = useThemeContext();
 
   const handleMenuOpened = () => {
     setOpened(!isOpened);
   };
 
   const dropDownList = [
-    { title: "Edit profile", onClick: () => {} },
-    { title: "Log Out", onClick: () => {} },
+    {
+      title: "Edit profile",
+      onClick: () => {
+        navigate(RoutesList.Settings);
+      },
+    },
+    {
+      title: "Log Out",
+      onClick: () => {
+        const users: UserListType[] = JSON.parse(
+          localStorage.getItem(USERS_DATA) || "",
+        );
+        const activeUser: UserListType = JSON.parse(
+          localStorage.getItem(ACTIVE_USER_DATA) || "",
+        );
+
+        users.forEach((user) => {
+          if (activeUser.username === user.username) {
+            user.isLoggedIn = false;
+            localStorage.setItem(USERS_DATA, JSON.stringify(users));
+          }
+        });
+
+        if (users) localStorage.removeItem(ACTIVE_USER_DATA);
+        navigate(RoutesList.SignIn);
+        document.location.reload();
+      },
+    },
   ];
 
   let usernameArray: string[];
@@ -39,17 +75,39 @@ const Username: FC<UsernameProps> = ({ username }) => {
           <UserIcon />
         )}
       </div>
-      <div className={styles.username}>
+      <div
+        className={classNames(styles.username, {
+          [styles.lightUsername]: themeValue === Theme.Light,
+        })}
+      >
         {username ? `${username}` : "Sign In"}
       </div>
-      <div className={styles.icon}>
+      <div
+        className={classNames(styles.icon, {
+          [styles.lightIcon]: themeValue === Theme.Light,
+        })}
+      >
         {!isOpened ? <ArrowRightIcon /> : <ArrowDownIcon />}
       </div>
 
       {isOpened && (
-        <div className={styles.list}>
+        <div
+          className={classNames(styles.list, {
+            [styles.lightList]: themeValue === Theme.Light,
+          })}
+        >
           {dropDownList.map(({ title, onClick }, index) => {
-            return <div className={styles.item} onClick={onClick} key={index}>{title}</div>;
+            return (
+              <div
+                className={classNames(styles.item, {
+                  [styles.lightItem]: themeValue === Theme.Light,
+                })}
+                onClick={onClick}
+                key={index}
+              >
+                {title}
+              </div>
+            );
           })}
         </div>
       )}

@@ -1,48 +1,23 @@
 @import "src/styles/colors";
 
-.container {
-  flex: 1;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: scroll;
-  background-color: $dark;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   width: 100%;
   padding: 40px 0 0;
 }
 
 .search {
   flex: 1;
-  margin: 0 40px 0 146px;
+  margin: 0 40px 0 120px;
+  position: relative;
 }
 
-.infoContainer {
-  margin: 152px auto 0 auto;
-}
-
-.menuContainer {
-  width: 160px;
-  height: calc(100% - 150px);
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  position: fixed;
-  top: 150px;
-  background-color: $dark;
-}
-
-.footer {
-  color: $light;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  margin: auto 0 50px;
+.logo {
+  transition: 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }

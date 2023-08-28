@@ -1,4 +1,5 @@
 import { KeyboardEvent, ReactElement } from "react";
+import { GenresData } from "src/redux/@type";
 
 export enum ButtonTypes {
   Primary = "primary",
@@ -15,6 +16,7 @@ export type ButtonProps = {
   title: string;
   onClick: () => void;
   disabled?: boolean;
+  className?: string;
 };
 
 export type TitleProps = {
@@ -52,6 +54,7 @@ export type InputProps = {
     event: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
   className?: string;
+  type?: string;
 };
 
 export type OptionType = { value: string; label: string };
@@ -83,7 +86,7 @@ export type GenreType = {
   display_name: string;
 };
 
-export type CardProps = {
+export type PostProps = {
   title: string;
   image: string;
   genres: GenreType[];
@@ -91,3 +94,39 @@ export type CardProps = {
   isFavourite?: boolean;
   isTrend?: boolean;
 };
+
+export interface iPost {
+  adult?: boolean;
+  backdrop_path?: string;
+  genre_ids?: number[];
+  id: number;
+  original_language?: string;
+  original_title?: string;
+  overview?: string;
+  popularity: number;
+  poster_path: string;
+  release_date?: string;
+  title: string;
+  video?: boolean;
+  vote_average: number;
+  vote_count?: number;
+
+  genres?: GenresData[];
+}
+
+export type PostsList = iPost[];
+
+export type queryParamsType = {
+  sort_by: string;
+  with_genres: string;
+  region: string;
+  release_date_from: string;
+  release_date_to: string;
+  vote_average_from: string;
+  vote_average_to: string;
+};
+
+export enum Theme {
+  Light = "light",
+  Dark = "dark",
+}

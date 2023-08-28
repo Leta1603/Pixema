@@ -1,0 +1,45 @@
+@import "src/styles/colors";
+
+.additionalInfo {
+  color: $secondary;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signIn {
+  display: block;
+  color: $primary;
+  transition: 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.containerInputAndIcon {
+  display: flex;
+  align-items: end;
+  gap: 5px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $graphite;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 15px 10px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.iconError {
+  margin-bottom: 24px;
+}

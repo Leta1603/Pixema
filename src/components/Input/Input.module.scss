@@ -4,6 +4,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  //box-sizing: border-box;
 }
 
 .title {
@@ -25,11 +26,6 @@
   font-family: "Exo 2";
   outline: 0;
   margin-top: 5px;
-
-  &:hover,
-  &:focus {
-    border: 2px solid $primary;
-  }
 }
 
 .errorText {
@@ -52,4 +48,13 @@
   &::placeholder {
     color: $light;
   }
+}
+
+.lightInput {
+  background-color: $light;
+  color: $graphite;
+}
+
+.lightTitle {
+  color: $black;
 }

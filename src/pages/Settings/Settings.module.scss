@@ -1,0 +1,126 @@
+@import "src/styles/colors";
+
+.settingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.title {
+  color: $white;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+.inputsContainer {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background-color: $dark;
+  border: 2px solid $dark;
+  border-radius: 10px;
+}
+
+.containerInputAndIcon {
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  flex: 1;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $graphite;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 15px 10px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.iconError {
+  margin-bottom: 24px;
+}
+
+.passwordsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  background-color: $dark;
+  border: 2px solid $dark;
+  border-radius: 10px;
+}
+
+.passwordsLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.colorWrap {
+  padding: 40px;
+  background-color: $dark;
+  border: 2px solid $dark;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colorText {
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.colorUseText {
+  color: $light;
+  font-weight: 500;
+}
+
+.settingsBtns {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  align-self: flex-end;
+  width: 47%;
+}
+
+.lightInputsContainer {
+  background-color: $white;
+}
+
+.lightPasswordsContainer {
+  background-color: $white;
+}
+
+.lightColorWrap {
+  background-color: $white;
+}
+
+.lightTitle {
+  color: $black;
+}
+
+.lightColorText {
+  color: $dark;
+}
+
+.lightColorUseText {
+  color: $graphite;
+}

@@ -1,0 +1,28 @@
+@import "src/styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $black;
+  border: 2px solid $black;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+    svg > path {
+      fill: $primary;
+    }
+  }
+}
+
+.activeButton {
+  svg > path {
+    fill: $primary;
+  }
+}

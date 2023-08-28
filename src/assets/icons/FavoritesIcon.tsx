@@ -1,7 +1,7 @@
 import React from "react";
 
 export const FavoritesIcon = ({
-  width = "14",
+  width = "24",
   height = "24",
   fill = "#ffff",
 }) => {

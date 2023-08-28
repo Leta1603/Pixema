@@ -6,8 +6,11 @@
   color: $white;
   gap: 20px;
   position: relative;
+  z-index: 10;
+  transition: 0.2s;
   &:hover {
     cursor: pointer;
+    transform: scale(1.1);
   }
 }
 
@@ -41,6 +44,7 @@
   top: 130%;
   left: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .item {
@@ -53,6 +57,31 @@
   transition: 0.2s;
   &:not(:last-child) {
     border-bottom: 1px solid $graphite;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $primary;
+  }
+}
+
+.lightUsername {
+  color: $black;
+}
+
+.lightIcon {
+  svg > path {
+    fill: $light;
+  }
+}
+
+.lightList{
+  background-color: $light;
+}
+
+.lightItem {
+  color: $black;
+  &:not(:last-child) {
+    border-bottom: 1px solid $secondary;
   }
   &:hover {
     cursor: pointer;

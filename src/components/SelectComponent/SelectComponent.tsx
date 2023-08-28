@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import Select, { OnChangeValue } from "react-select";
+import classNames from "classnames";
 
-import { OptionsType, OptionType, SelectProps } from "../../@types";
-
+import { OptionsType, OptionType, SelectProps, Theme } from "src/@types";
 import "./SelectComponent.scss";
-
-// import styles from "./SelectComponent.module.scss";
+import { useThemeContext } from "src/context/Theme";
 
 const SelectComponent: FC<SelectProps> = ({
   title,
@@ -17,6 +16,8 @@ const SelectComponent: FC<SelectProps> = ({
   isMulti,
   isDisabled,
 }) => {
+  const { themeValue } = useThemeContext();
+
   const getValue = () => {
     if (value) {
       return isMulti
@@ -37,7 +38,9 @@ const SelectComponent: FC<SelectProps> = ({
 
   return (
     <div>
-      <label htmlFor="select" className={"label"}>{title}</label>
+      <label htmlFor="select" className={"label"}>
+        {title}
+      </label>
       <Select
         id={"select"}
         options={options}

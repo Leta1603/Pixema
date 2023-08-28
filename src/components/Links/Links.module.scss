@@ -4,6 +4,11 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 160px;
+  svg > path {
+    transition: 0.2s;
+    fill: $secondary;
+  }
   &:hover,
   &:active {
     cursor: pointer;
@@ -24,7 +29,7 @@
 }
 
 .title {
-  color: $white;
+  color: $secondary;
   font-family: "Exo 2";
   font-size: 18px;
   font-weight: 600;

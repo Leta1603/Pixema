@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { TabProps } from "../../@types";
+import { TabProps } from "src/@types";
 
 import styles from "./Tab.module.scss";
 
