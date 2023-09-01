@@ -7,7 +7,14 @@ type InitialState = {
   themeValue: Theme;
 };
 
-const theme: Theme = JSON.parse(localStorage.getItem(THEME) || "");
+const themeJSON = localStorage.getItem(THEME);
+let theme: Theme;
+
+if (themeJSON) {
+  theme = JSON.parse(themeJSON) === "dark" ? Theme.Dark : Theme.Light;
+} else {
+  theme = Theme.Dark;
+}
 
 const initialState: InitialState = {
   themeValue: theme,

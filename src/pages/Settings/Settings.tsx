@@ -9,7 +9,6 @@ import { ButtonTypes, Theme } from "src/@types";
 import { ACTIVE_USER_DATA, USERS_DATA } from "src/utils/constants";
 import { UserListType } from "src/redux/@type";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setChanged } from "src/redux/reducers/authSlice";
 import { useThemeContext } from "src/context/Theme";
@@ -26,7 +25,6 @@ const Settings = () => {
 
   const { themeValue } = useThemeContext();
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [name, setName] = useState(activeUser.username);
@@ -372,9 +370,11 @@ const Settings = () => {
             })}
           >
             <div>{themeValue === Theme.Light ? "Light" : "Dark"}</div>
-            <div className={classNames(styles.colorUseText, {
-              [styles.lightColorUseText]: themeValue === Theme.Light,
-            })}>
+            <div
+              className={classNames(styles.colorUseText, {
+                [styles.lightColorUseText]: themeValue === Theme.Light,
+              })}
+            >
               Use {themeValue === Theme.Light ? "light" : "dark"} theme
             </div>
           </div>

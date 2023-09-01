@@ -9,4 +9,4 @@ export const PAGES_COUNT = 500;
 export const TOTAL_POSTS_COUNT = 10000;
 export const URL_IMG = "https://image.tmdb.org/t/p/w500";
 
-export const THEME = "theme";
+export const THEME = "Theme";

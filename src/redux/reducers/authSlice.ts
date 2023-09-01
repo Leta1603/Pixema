@@ -1,8 +1,6 @@
-import React from "react";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "src/redux/store";
 import { CreateSessionResponseData } from "src/redux/@type";
-import { ACTIVE_USER_DATA } from "src/utils/constants";
 
 type InitialStateType = {
   requestToken: string;

@@ -1,46 +1,80 @@
-# Getting Started with Create React App
+# Pixema
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Website](https://leta1603.github.io/Pixema/)
 
-## Available Scripts
+Pixema is a web application similar to kinopoisk.ru and okko.tv, providing a vast collection of movies and TV shows. It allows users to search for content, add items to their favorites, and explore the current trending movies and series. The application supports both light and dark themes. The local storage was used due to the fact that at the time of the creation of the application there was no place to store information. Each user has their own list of favorite movies.
 
-In the project directory, you can run:
+## Preview
 
-### `yarn start`
+![Image](https://github.com/Leta1603/Pixema/blob/master/public/Preview.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React
+- TypeScript
+- Redux Toolkit
+- Redux Saga
+- React Router v6
+- Styled Components
+- React Select
+- React Toastify
+- React infinite scroll component
+- React copy to clipboard
+- Lottie-react
+- Gh-pages
+- TMDB API
+- Yohoho.cc
+- MUI
 
-### `yarn test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Extensive collection of movies
+- Watch the movie through the built-in player
+- Search functionality to find specific content
+- Movie filtering function
+- Ability to add movies and series to favorites
+- Trending section to discover popular content
+- Support for both light and dark themes
+- User account with customizable settings
 
-### `yarn build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+git clone https://github.com/Leta1603/Pixema.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project directory:
 
-### `yarn eject`
+```
+cd pixema
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Install the dependencies:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Start the development server:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+yarn start
+```
 
-## Learn More
+5. Open your browser and visit http://localhost:3000 to access Pixema.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Additional Information
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Pixema is a project that aims to provide an immersive and user-friendly experience for movie enthusiasts. By leveraging a range of modern technologies, including React, TypeScript, Redux Toolkit and Redux-Saga, the application offers seamless navigation, efficient state management, and a visually appealing interface.
+
+> Incorporating third-party APIs, such as the TMDB API, allows Pixema to retrieve comprehensive information about movies and series, including ratings, summaries, and release dates. Local Storage provides user authentication and data storage, enabling the implementation of personalized features like favorites and user settings.
+
+> If you are launching a website from Belarus or Russia, it is better to enable VPN, because the API doesn't work in these countries.
+
+> Enjoy your movie exploration with Pixema!
+
+## Author
+
+[Violetta Zarubayko](https://github.com/Leta1603)
