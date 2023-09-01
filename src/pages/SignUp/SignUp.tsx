@@ -211,12 +211,9 @@ const SignUp = () => {
 
     usersList.push(newUser);
     localStorage.setItem(USERS_DATA, JSON.stringify(usersList));
-    const hostnameOfSite = window.location.hostname;
-
-
-    // const url = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:3000/sign-in`;
-    const url = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://${hostnameOfSite}/sign-in`;
-    window.open(url, "_self");
+    const url = `https://www.themoviedb.org/authenticate/${requestToken}`;
+    window.open(url, "_blank");
+    navigate(`/sign-in?requestToken=${requestToken}`);
   };
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
