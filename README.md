@@ -4,6 +4,8 @@
 
 Pixema is a web application similar to kinopoisk.ru and okko.tv, providing a vast collection of movies and TV shows. It allows users to search for content, add items to their favorites, and explore the current trending movies and series. The application supports both light and dark themes. The local storage was used due to the fact that at the time of the creation of the application there was no place to store information. Each user has their own list of favorite movies.
 
+> If you are launching a website from Belarus or Russia, it is better to enable VPN, because the API doesn't work in these countries.
+
 ## Preview
 
 ![Image](https://github.com/Leta1603/Pixema/blob/master/public/Preview.png)
@@ -71,7 +73,6 @@ yarn start
 
 > Incorporating third-party APIs, such as the TMDB API, allows Pixema to retrieve comprehensive information about movies and series, including ratings, summaries, and release dates. Local Storage provides user authentication and data storage, enabling the implementation of personalized features like favorites and user settings.
 
-> If you are launching a website from Belarus or Russia, it is better to enable VPN, because the API doesn't work in these countries.
 
 > Enjoy your movie exploration with Pixema!
 
