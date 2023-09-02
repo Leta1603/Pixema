@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import PostList from "src/components/PostsList";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getTrends,
   getUpcomingMovies,
-  PostSelectors,
-} from "src/redux/reducers/postSlice";
+  MovieSelectors,
+} from "src/redux/reducers/movieSlice";
 import Pagination from "src/components/Pagination/Pagination";
 
 const Upcoming = () => {
   const dispatch = useDispatch();
 
-  const upcomingList = useSelector(PostSelectors.getUpcomingMovies);
-  const isListLoading = useSelector(PostSelectors.getUpcomingMoviesLoading);
-  const totalPages = useSelector(PostSelectors.getUpcomingMoviesTotalPages);
+  const upcomingList = useSelector(MovieSelectors.getUpcomingMovies);
+  const isListLoading = useSelector(MovieSelectors.getUpcomingMoviesLoading);
+  const totalPages = useSelector(MovieSelectors.getUpcomingMoviesTotalPages);
 
   const [currentPage, setCurrentPage] = useState(1);
 

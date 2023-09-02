@@ -11,7 +11,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   const themeValue = useSelector(ThemeSelectors.getThemeValue);
-  // localStorage.setItem(THEME, JSON.stringify(themeValue));
   const onChangeTheme = (value: Theme) => () => {
     dispatch(setThemeValue(value));
   };

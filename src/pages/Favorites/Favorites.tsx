@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PostList from "src/components/PostsList";
 import { useDispatch, useSelector } from "react-redux";
-import { PostSelectors, setFavoritePosts } from "src/redux/reducers/postSlice";
+import {MovieSelectors, setFavoriteMovies} from "src/redux/reducers/movieSlice";
 import { ACTIVE_USER_DATA } from "src/utils/constants";
 
 const Favorites = () => {
@@ -11,10 +11,10 @@ const Favorites = () => {
   const activeUserId = activeUser.session_id;
 
   useEffect(() => {
-    dispatch(setFavoritePosts(activeUserId));
+    dispatch(setFavoriteMovies(activeUserId));
   }, []);
 
-  const favoritesList = useSelector(PostSelectors.getFavoritePosts);
+  const favoritesList = useSelector(MovieSelectors.getFavoriteMovies);
 
   return <PostList postList={favoritesList} />;
 };

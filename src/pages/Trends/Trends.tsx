@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTrends, PostSelectors } from "src/redux/reducers/postSlice";
-import { TOTAL_POSTS_COUNT } from "src/utils/constants";
+import { getTrends, MovieSelectors } from "src/redux/reducers/movieSlice";
+import { TOTAL_MOVIES_COUNT } from "src/utils/constants";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "src/components/Loader";
 
@@ -12,8 +12,8 @@ const Trends = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const trendList = useSelector(PostSelectors.getTrends);
-  const isListLoading = useSelector(PostSelectors.getTrendsLoading);
+  const trendList = useSelector(MovieSelectors.getTrends);
+  const isListLoading = useSelector(MovieSelectors.getTrendsLoading);
 
   const onNextReached = () => {
     setCurrentPage(currentPage + 1);
@@ -27,7 +27,7 @@ const Trends = () => {
     <InfiniteScroll
       next={onNextReached}
       scrollThreshold={0.7}
-      hasMore={trendList.length < TOTAL_POSTS_COUNT}
+      hasMore={trendList.length < TOTAL_MOVIES_COUNT}
       loader={<Loader />}
       dataLength={trendList.length}
       scrollableTarget="scrollableDiv"

@@ -81,19 +81,6 @@ export type LinksProps = {
   className?: string;
 };
 
-export type GenreType = {
-  name: string;
-  display_name: string;
-};
-
-export type PostProps = {
-  title: string;
-  image: string;
-  genres: GenreType[];
-  rating: number;
-  isFavourite?: boolean;
-  isTrend?: boolean;
-};
 
 export interface iPost {
   adult?: boolean;

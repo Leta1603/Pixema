@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSadaMiddleware from "redux-saga";
 
-import postReducer from "./reducers/postSlice";
+import movieReducer from "./reducers/movieSlice";
 import authReducer from "./reducers/authSlice";
 import genreReducer from "./reducers/genreSlice";
 import regionReducer from "./reducers/regionSlice";
@@ -13,7 +13,7 @@ const sagaMiddleware = createSadaMiddleware();
 const store = configureStore({
   reducer: {
     authReducer,
-    postReducer,
+    movieReducer,
     genreReducer,
     regionReducer,
     themeReducer,

@@ -3,70 +3,6 @@ export type PayloadWithDataAndCallback<Data> = {
   callback: () => void;
 };
 
-// export type PaginationDataType = {
-//   id: number;
-//   name: string;
-//   release_date: string;
-//   year: string;
-//   tagline: string;
-//   poster: string;
-//   backdrop: string;
-//   runtime: number;
-//   budget: number;
-//   revenue: number;
-//   popularity: number;
-//   tmdb_id: number;
-//   imdb_id: string;
-//   is_series: boolean;
-//   adult: boolean;
-//   season_count: number;
-//   episode_count: number;
-//   series_ended: boolean;
-//   language: string;
-//   original_title: string;
-//   certification: string;
-//   rating: string;
-//   vote_count: number;
-// };
-
-// export type PaginationType = {
-//   current_page: number;
-//   from: number;
-//   to: number;
-//   per_page: number;
-//   last_page: number;
-//   total: number;
-//   data: PaginationDataType[];
-// };
-
-// export type GetPostsResponse = {
-//   status: string;
-//   pagination: PaginationType;
-// };
-
-export type SignUpUserData = {
-  email: string;
-  password: string;
-  token_name: string;
-};
-
-export type SignUpUserDataPayload = PayloadWithDataAndCallback<SignUpUserData>;
-
-export type SignUpResponseData = {
-  status: string;
-  user: {
-    id: number;
-    display_name: string;
-    avatar: string;
-    first_name: string;
-    last_name: string;
-    gender: string;
-  };
-};
-
-export type SignInUserData = {};
-
-export type SigInUserDataPayload = PayloadWithDataAndCallback<SignInUserData>;
 
 export type CreateRequestTokenResponse = {
   success: boolean;
@@ -111,19 +47,19 @@ export type PostProps = {
 
 export type PostListProps = PostProps[];
 
-export type GetPostsResponse = {
+export type GetMoviesResponse = {
   page: number;
   results: PostListProps;
   total_pages: number;
 };
 
-export type GetPostsPayload = {
+export type GetMoviesPayload = {
   page: number;
   isOverwrite: boolean;
 };
 
-export type SetPostsPayload = {
-  postList: PostListProps;
+export type SetMoviesPayload = {
+  movieList: PostListProps;
   isOverwrite: boolean;
 };
 
@@ -145,7 +81,7 @@ export type SpokenLanguages = {
   name: string;
 };
 
-export type GetPostDetails = {
+export type GetMovieDetails = {
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: {
@@ -192,7 +128,7 @@ export type GenresResponse = {
   genres: GenresData[];
 };
 
-export type FavoriteTypes = GetPostDetails[];
+export type FavoriteTypes = GetMovieDetails[];
 
 export type FavoriteObjectsTypes = {
   user: string;
@@ -212,8 +148,8 @@ export type SearchResponse = {
   total_results: number;
 };
 
-export type SetSearchedPostsPayload = {
-  postList: PostListProps;
+export type SetSearchedMoviesPayload = {
+  movieList: PostListProps;
   isOverwrite: boolean;
   total_pages: number;
 };
@@ -252,24 +188,3 @@ export type UpcomingResponse = {
   total_pages: number;
   total_results: number;
 };
-
-// export type AccountDetailsData = {
-//   session_id: string;
-// };
-//
-// export type AccountDetailsResponseData = {
-//   avatar: {
-//     gravatar: {
-//       hash: string;
-//     };
-//     tmdb: {
-//       avatar_path: string | null;
-//     };
-//   };
-//   id: number;
-//   iso_639_1: string;
-//   iso_3166_1: string;
-//   name: string;
-//   include_adult: boolean;
-//   username: string;
-// };

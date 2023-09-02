@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   getFilterMovieList,
-  PostSelectors,
-} from "src/redux/reducers/postSlice";
+  MovieSelectors,
+} from "src/redux/reducers/movieSlice";
 import PostList from "src/components/PostsList";
 import React, { useEffect, useState } from "react";
 import EmptyState from "src/components/EmptyState";
@@ -17,8 +17,8 @@ const Filter = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const filterList = useSelector(PostSelectors.getFilterMovieList);
-  const totalPages = useSelector(PostSelectors.getFilterMovieTotalPages);
+  const filterList = useSelector(MovieSelectors.getFilterMovieList);
+  const totalPages = useSelector(MovieSelectors.getFilterMovieTotalPages);
 
   const queryStringToObject = (queryString: string): queryParamsType => {
     const queryParamsArray = queryString.split("&");

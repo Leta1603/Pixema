@@ -2,9 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import Modal from "@mui/material/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  PostSelectors,
+  MovieSelectors,
   setFilterModalOpened,
-} from "src/redux/reducers/postSlice";
+} from "src/redux/reducers/movieSlice";
 import { useNavigate } from "react-router-dom";
 import makeAnimated from "react-select/animated";
 import { GenreSelectors } from "src/redux/reducers/genreSlice";
@@ -26,7 +26,7 @@ import { useThemeContext } from "src/context/Theme";
 import classNames from "classnames";
 
 const FilterModalWindow = () => {
-  const isOpened = useSelector(PostSelectors.getFilterMovieOpened);
+  const isOpened = useSelector(MovieSelectors.getFilterMovieOpened);
 
   const dispatch = useDispatch();
 

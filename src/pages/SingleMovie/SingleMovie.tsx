@@ -11,14 +11,13 @@ import {
 import Post from "src/components/Post";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getPostDetails,
+  getMovieDetails,
   getRecommendations,
-  PostSelectors,
-  setFavoriteObjectPosts,
-} from "src/redux/reducers/postSlice";
+  MovieSelectors, setFavoriteObjectMovies,
+} from "src/redux/reducers/movieSlice";
 import { useParams } from "react-router-dom";
 import { ACTIVE_USER_DATA, URL_IMG } from "src/utils/constants";
-import { GetPostDetails } from "src/redux/@type";
+import { GetMovieDetails } from "src/redux/@type";
 import classNames from "classnames";
 import Loader from "src/components/Loader";
 import Player from "src/components/Player";
@@ -37,13 +36,13 @@ const SingleMovie = () => {
   const activeUser = JSON.parse(localStorage.getItem(ACTIVE_USER_DATA) || "");
   const activeUserId = activeUser.session_id;
 
-  const singleMovie = useSelector(PostSelectors.getPostDetails);
-  const recommendationPosts = useSelector(PostSelectors.getRecommendations);
-  const favoritePosts = useSelector(PostSelectors.getFavoritePosts);
+  const singleMovie = useSelector(MovieSelectors.getMovieDetails);
+  const recommendationPosts = useSelector(MovieSelectors.getRecommendations);
+  const favoriteMovies = useSelector(MovieSelectors.getFavoriteMovies);
 
   const favouriteIndex =
     singleMovie &&
-    favoritePosts.findIndex((item) => item.id === singleMovie.id);
+    favoriteMovies.findIndex((item) => item.id === singleMovie.id);
 
   const { id } = useParams();
 
@@ -51,13 +50,13 @@ const SingleMovie = () => {
 
   useEffect(() => {
     if (id) {
-      dispatch(getPostDetails(id));
+      dispatch(getMovieDetails(id));
       dispatch(getRecommendations(id));
     }
   }, [id]);
 
-  const onFavouriteClick = (post: GetPostDetails) => () => {
-    dispatch(setFavoriteObjectPosts({ post, activeUserId }));
+  const onFavouriteClick = (movie: GetMovieDetails) => () => {
+    dispatch(setFavoriteObjectMovies({ movie, activeUserId }));
   };
 
   let movieDetails: MovieDetailType[] = [];

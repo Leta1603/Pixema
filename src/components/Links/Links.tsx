@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import {Children, LinksProps} from "../../@types";
+import {LinksProps} from "src/@types";
 
 import styles from "./Links.module.scss";
 import classNames from "classnames";

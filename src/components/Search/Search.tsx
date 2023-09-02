@@ -5,14 +5,13 @@ import { FilterIcon } from "src/assets/icons";
 
 import styles from "./Search.module.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { TOTAL_POSTS_COUNT, URL_IMG } from "src/utils/constants";
+import { TOTAL_MOVIES_COUNT, URL_IMG } from "src/utils/constants";
 import Loader from "src/components/Loader";
 import {
-  clearSearchedPosts,
-  getSearchedPosts,
-  PostSelectors,
+  clearSearchedMovies, getSearchedMovies,
+  MovieSelectors,
   setFilterModalOpened,
-} from "src/redux/reducers/postSlice";
+} from "src/redux/reducers/movieSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useThemeContext } from "src/context/Theme";
@@ -33,14 +32,14 @@ const Search: FC<Search> = ({ disabled, className }) => {
   const [inputValue, setInputValue] = useState("");
   const [isDropdownOpened, setDropdownOpened] = useState(false);
 
-  const searchedPosts = useSelector(PostSelectors.getSearchedPosts);
+  const searchedPosts = useSelector(MovieSelectors.getSearchedMovies);
 
   const divRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (inputValue.length) {
       dispatch(
-        getSearchedPosts({
+        getSearchedMovies({
           page: currentPage,
           query: inputValue,
           isOverwrite: true,
@@ -48,7 +47,7 @@ const Search: FC<Search> = ({ disabled, className }) => {
       );
       setDropdownOpened(true);
     } else {
-      dispatch(clearSearchedPosts());
+      dispatch(clearSearchedMovies());
       setDropdownOpened(false);
     }
   }, [inputValue]);
@@ -62,7 +61,7 @@ const Search: FC<Search> = ({ disabled, className }) => {
 
   const handleSearchOpened = () => {
     if (inputValue) {
-      dispatch(clearSearchedPosts());
+      dispatch(clearSearchedMovies());
       navigate(`movies/${inputValue}`);
       setInputValue("");
     }
@@ -130,7 +129,7 @@ const Search: FC<Search> = ({ disabled, className }) => {
           <InfiniteScroll
             next={onNextReached}
             scrollThreshold={0.7}
-            hasMore={searchedPosts.length < TOTAL_POSTS_COUNT}
+            hasMore={searchedPosts.length < TOTAL_MOVIES_COUNT}
             loader={<Loader />}
             dataLength={searchedPosts.length}
             scrollableTarget="scrollableDiv"

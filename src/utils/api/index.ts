@@ -2,7 +2,6 @@ import { create } from "apisauce";
 import { CreateSessionData } from "src/redux/@type";
 
 const API = create({
-  // baseURL: "https://moviesdatabase.p.rapidapi.com",
   baseURL: "https://api.themoviedb.org/3",
 });
 
@@ -30,21 +29,7 @@ const createSession = (data: CreateSessionData) => {
   });
 };
 
-// const getPosts = (page: number, include_video?: boolean) => {
-//   return API.get(
-//     "/discover/movie",
-//     { include_adult: false, page, language: "en-US", include_video },
-//     {
-//       headers: {
-//         accept: "application/json",
-//         Authorization:
-//           "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTdhYmVkMGQ4NGU1NzA1NWI5NThiNWQyNTU5NDk3MiIsInN1YiI6IjY0ZDI2Yzk4ODUwOTBmMDEyNWJlNGI5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.T8awDlVyKSQfHZkjDi9uBFknVHckIrmXXd_UZHC5Mhg",
-//       },
-//     },
-//   );
-// };
-
-const getPosts = (
+const getMovies = (
   page: number,
   sort_by?: string,
   vote_count?: number,
@@ -79,7 +64,7 @@ const getPosts = (
   );
 };
 
-const getPostDetails = (movie_id: string) => {
+const getMovieDetails = (movie_id: string) => {
   return API.get(
     `/movie/${movie_id}`,
     {},
@@ -177,25 +162,11 @@ const getUpcomingMovies = (page: number) => {
   );
 };
 
-// const accountDetails = (account_id: number, session_id: string) => {
-//   return API.get(
-//     `/account/${account_id}`,
-//     { session_id: session_id },
-//     {
-//       headers: {
-//         accept: "application/json",
-//         Authorization:
-//           "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTdhYmVkMGQ4NGU1NzA1NWI5NThiNWQyNTU5NDk3MiIsInN1YiI6IjY0ZDI2Yzk4ODUwOTBmMDEyNWJlNGI5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.T8awDlVyKSQfHZkjDi9uBFknVHckIrmXXd_UZHC5Mhg",
-//       },
-//     },
-//   );
-// };
-
 export default {
   createRequestToken,
   createSession,
-  getPosts,
-  getPostDetails,
+  getMovies,
+  getMovieDetails,
   getRecommendations,
   getGenres,
   getTrends,

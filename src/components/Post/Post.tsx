@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { GenreSelectors } from "src/redux/reducers/genreSlice";
 import { GenresData } from "src/redux/@type";
-import { PostSelectors } from "src/redux/reducers/postSlice";
+import { MovieSelectors } from "src/redux/reducers/movieSlice";
 import { useThemeContext } from "src/context/Theme";
 
 interface PostProps extends iPost {
@@ -30,8 +30,8 @@ const Post: FC<PostProps> = ({
   const { themeValue } = useThemeContext();
 
   const allGenres: GenresData[] = useSelector(GenreSelectors.getGenres);
-  const favoritePosts = useSelector(PostSelectors.getFavoritePosts);
-  const favouriteIndex = favoritePosts.findIndex((item) => item.id === id);
+  const favoriteMovies = useSelector(MovieSelectors.getFavoriteMovies);
+  const favouriteIndex = favoriteMovies.findIndex((item) => item.id === id);
 
   let postGenres: string[] = [];
   allGenres.forEach(({ id, name }) => {

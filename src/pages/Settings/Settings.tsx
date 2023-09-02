@@ -378,8 +378,6 @@ const Settings = () => {
               Use {themeValue === Theme.Light ? "light" : "dark"} theme
             </div>
           </div>
-          {/*Доделать*/}
-          {/*<SwitchComponent />*/}
           <ThemeSwitcher />
         </div>
       </div>

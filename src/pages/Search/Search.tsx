@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PostList from "src/components/PostsList";
 import { useDispatch, useSelector } from "react-redux";
-import { getSearchedPosts, PostSelectors } from "src/redux/reducers/postSlice";
+import {getSearchedMovies, MovieSelectors} from "src/redux/reducers/movieSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { RoutesList } from "src/components/Router";
 import EmptyState from "src/components/EmptyState";
@@ -14,9 +14,9 @@ const Search = () => {
 
   const navigate = useNavigate();
 
-  const searchedPosts = useSelector(PostSelectors.getSearchedPosts);
-  const isListLoading = useSelector(PostSelectors.getSearchedPostsLoading);
-  const totalPages = useSelector(PostSelectors.getSearchedPostsTotalPages);
+  const searchedPosts = useSelector(MovieSelectors.getSearchedMovies);
+  const isListLoading = useSelector(MovieSelectors.getSearchedMoviesLoading);
+  const totalPages = useSelector(MovieSelectors.getSearchedMoviesTotalPages);
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -25,7 +25,7 @@ const Search = () => {
       navigate(RoutesList.Home);
     } else {
       dispatch(
-        getSearchedPosts({
+        getSearchedMovies({
           query: search,
           page: currentPage,
           isOverwrite: true,
